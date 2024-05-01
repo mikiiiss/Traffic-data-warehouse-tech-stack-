@@ -1,0 +1,16 @@
+[2024-05-01T12:57:19.700+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: try_dag.best_performing_model manual__2024-05-01T12:57:09.657190+00:00 [queued]>
+[2024-05-01T12:57:19.738+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: try_dag.best_performing_model manual__2024-05-01T12:57:09.657190+00:00 [queued]>
+[2024-05-01T12:57:19.740+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-05-01T12:57:19.805+0000] {taskinstance.py:1327} INFO - Executing <Task(BranchPythonOperator): best_performing_model> on 2024-05-01 12:57:09.657190+00:00
+[2024-05-01T12:57:19.817+0000] {standard_task_runner.py:57} INFO - Started process 4573 to run task
+[2024-05-01T12:57:19.832+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'try_dag', 'best_performing_model', 'manual__2024-05-01T12:57:09.657190+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/test_dag.py', '--cfg-path', '/tmp/tmp8pn9yee3']
+[2024-05-01T12:57:19.837+0000] {standard_task_runner.py:85} INFO - Job 35: Subtask best_performing_model
+[2024-05-01T12:57:19.937+0000] {task_command.py:410} INFO - Running <TaskInstance: try_dag.best_performing_model manual__2024-05-01T12:57:09.657190+00:00 [running]> on host aef8c7e571f4
+[2024-05-01T12:57:20.123+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='try_dag' AIRFLOW_CTX_TASK_ID='best_performing_model' AIRFLOW_CTX_EXECUTION_DATE='2024-05-01T12:57:09.657190+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-01T12:57:09.657190+00:00'
+[2024-05-01T12:57:20.141+0000] {python.py:183} INFO - Done. Returned value was: False
+[2024-05-01T12:57:20.142+0000] {python.py:216} INFO - Branch callable return False
+[2024-05-01T12:57:20.142+0000] {skipmixin.py:161} INFO - Following branch False
+[2024-05-01T12:57:20.143+0000] {skipmixin.py:221} INFO - Skipping tasks ['True']
+[2024-05-01T12:57:20.236+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=try_dag, task_id=best_performing_model, execution_date=20240501T125709, start_date=20240501T125719, end_date=20240501T125720
+[2024-05-01T12:57:20.284+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2024-05-01T12:57:20.340+0000] {taskinstance.py:2651} INFO - 1 downstream tasks scheduled from follow-on schedule check
