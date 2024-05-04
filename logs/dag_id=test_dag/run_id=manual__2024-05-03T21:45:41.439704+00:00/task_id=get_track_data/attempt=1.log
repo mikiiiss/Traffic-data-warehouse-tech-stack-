@@ -1,0 +1,35 @@
+[2024-05-03T21:45:44.647+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_dag.get_track_data manual__2024-05-03T21:45:41.439704+00:00 [queued]>
+[2024-05-03T21:45:44.665+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_dag.get_track_data manual__2024-05-03T21:45:41.439704+00:00 [queued]>
+[2024-05-03T21:45:44.665+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-05-03T21:45:44.695+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): get_track_data> on 2024-05-03 21:45:41.439704+00:00
+[2024-05-03T21:45:44.704+0000] {standard_task_runner.py:57} INFO - Started process 382 to run task
+[2024-05-03T21:45:44.711+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'test_dag', 'get_track_data', 'manual__2024-05-03T21:45:41.439704+00:00', '--job-id', '117', '--raw', '--subdir', 'DAGS_FOLDER/test_dag.py', '--cfg-path', '/tmp/tmplt001kif']
+[2024-05-03T21:45:44.714+0000] {standard_task_runner.py:85} INFO - Job 117: Subtask get_track_data
+[2024-05-03T21:45:44.807+0000] {task_command.py:410} INFO - Running <TaskInstance: test_dag.get_track_data manual__2024-05-03T21:45:41.439704+00:00 [running]> on host 08fc968d0c14
+[2024-05-03T21:45:45.070+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_dag' AIRFLOW_CTX_TASK_ID='get_track_data' AIRFLOW_CTX_EXECUTION_DATE='2024-05-03T21:45:41.439704+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-03T21:45:41.439704+00:00'
+[2024-05-03T21:45:45.094+0000] {base.py:73} INFO - Using connection ID '***' for task execution.
+[2024-05-03T21:45:45.097+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/test_dag.py", line 23, in get_track_data
+    pg_conn = pg_hook.get_conn()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/postgres/hooks/postgres.py", line 144, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2024-05-03T21:45:45.115+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=test_dag, task_id=get_track_data, execution_date=20240503T214541, start_date=20240503T214544, end_date=20240503T214545
+[2024-05-03T21:45:45.148+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 117 for task get_track_data (connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+; 382)
+[2024-05-03T21:45:45.202+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2024-05-03T21:45:45.243+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

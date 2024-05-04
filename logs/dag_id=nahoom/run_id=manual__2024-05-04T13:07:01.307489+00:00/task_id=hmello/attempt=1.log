@@ -1,0 +1,18 @@
+[2024-05-04T13:07:05.215+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nahoom.hmello manual__2024-05-04T13:07:01.307489+00:00 [queued]>
+[2024-05-04T13:07:05.241+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nahoom.hmello manual__2024-05-04T13:07:01.307489+00:00 [queued]>
+[2024-05-04T13:07:05.242+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2024-05-04T13:07:05.276+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): hmello> on 2024-05-04 13:07:01.307489+00:00
+[2024-05-04T13:07:05.285+0000] {standard_task_runner.py:57} INFO - Started process 8409 to run task
+[2024-05-04T13:07:05.295+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'nahoom', 'hmello', 'manual__2024-05-04T13:07:01.307489+00:00', '--job-id', '1408', '--raw', '--subdir', 'DAGS_FOLDER/nahoo.py', '--cfg-path', '/tmp/tmpvi45l2kv']
+[2024-05-04T13:07:05.296+0000] {standard_task_runner.py:85} INFO - Job 1408: Subtask hmello
+[2024-05-04T13:07:05.443+0000] {task_command.py:410} INFO - Running <TaskInstance: nahoom.hmello manual__2024-05-04T13:07:01.307489+00:00 [running]> on host 08fc968d0c14
+[2024-05-04T13:07:05.781+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='nahoom' AIRFLOW_CTX_TASK_ID='hmello' AIRFLOW_CTX_EXECUTION_DATE='2024-05-04T13:07:01.307489+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-04T13:07:01.307489+00:00'
+[2024-05-04T13:07:05.794+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-05-04T13:07:05.795+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo hello']
+[2024-05-04T13:07:05.820+0000] {subprocess.py:86} INFO - Output:
+[2024-05-04T13:07:05.823+0000] {subprocess.py:93} INFO - hello
+[2024-05-04T13:07:05.824+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-05-04T13:07:05.880+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=nahoom, task_id=hmello, execution_date=20240504T130701, start_date=20240504T130705, end_date=20240504T130705
+[2024-05-04T13:07:05.913+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2024-05-04T13:07:05.966+0000] {taskinstance.py:2651} INFO - 1 downstream tasks scheduled from follow-on schedule check
